@@ -1,7 +1,0 @@
-numpy
-pandas
-streamlit
-altair
-vega_datasets
-matplotlib.pyplot
-seaborn
