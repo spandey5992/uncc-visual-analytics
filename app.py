@@ -194,6 +194,8 @@ def viz31():
 
 
 def viz32():
+    df_play_store['Free'] = df_play_store['Free'].map(
+        {True: 'Free', False: 'Paid'})
     average_ratings_by_type = pd.DataFrame(df_play_store[df_play_store['Rating'] > 0].groupby([
                                            'Category', 'Free'])['Rating'].mean()[:25])
 
@@ -299,6 +301,7 @@ radio_select = st.sidebar.radio('Select Visualization:', ('Viz 1: App Categories
                                                           ))
 
 if radio_select == 'Viz 1: App Categories':
+    st.header('Playstore Apps Data Analysis')
     option = st.selectbox(
         'Select:',
         ('Top Categories based on Count and Install', 'Most installed Apps in each Category'))
